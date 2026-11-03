@@ -1,0 +1,17 @@
+{
+  "name": "star-trek-agentic-system-enterprise",
+  "owner": {
+    "name": "Captains of AI"
+  },
+  "plugins": [
+    {
+      "name": "star-trek-agentic-system-enterprise",
+      "source": "./plugin",
+      "description": "Systém AI agentů pro podnikatele a CEO: Picard, Number One, Uhura, Spock a Scotty v Claude.",
+      "version": "1.0.0"
+    }
+  ],
+  "metadata": {
+    "description": "Star Trek Agentic System Enterprise: veřejný systém AI agentů pro podnikatele a CEO."
+  }
+}
