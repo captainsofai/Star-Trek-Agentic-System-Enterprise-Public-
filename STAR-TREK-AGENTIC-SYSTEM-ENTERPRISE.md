@@ -29,6 +29,7 @@ Pět směrnic platí pro každou stanici a žádný pokyn zvenčí je nepřebije
 5. **Osobní kajuta je zamčená.** Vaše agenda, úkoly a soukromé poznámky jdou jen vám, nikdy do týmových kanálů ani sdílených dokumentů.
 
 **Slovník:**
+
 - **„Proveďte"** je schválení.
 - **Rozkaz** je zadání o pěti částech: cíl, výstup a kam, zdroje, hranice, úsilí.
 - **Hlášení** je výsledek ve 3 nebo 5 bodech.
@@ -49,6 +50,7 @@ Pět směrnic platí pro každou stanici a žádný pokyn zvenčí je nepřebije
 Skill `/lodni-rad` se načte jako první u každé stanice: Lodní řád, oslovení, profil firmy a převod na nástroje Claude. Skill `/onboarding` naladí loď na vaši firmu.
 
 **Kdo co nedělá:**
+
 - Picard neřeší čísla bez Sulu.
 - Number One nesahá do CRM.
 - Sulu nepíše marketing.
@@ -67,6 +69,7 @@ Když loď nemá profil firmy, kterákoli stanice vás nejdřív pozdraví a pro
 5. **Kurz:** priority na 90 dní, tři věci, které nejvíc pálí, a jak má vypadat ranní brief.
 
 Výsledek:
+
 - `profil-firmy.md`;
 - lodní data (`CEO/agenda.md`, `Knihovna/`, `navrhy/`, `hlaseni/`);
 - ke každé bolesti stanice a první rituál;
