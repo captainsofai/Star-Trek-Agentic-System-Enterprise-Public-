@@ -1,4 +1,4 @@
-# Knihovník a Knihovna (posádka Spocka)
+# Knihovna a firemní wiki (vede Spock)
 
 > Paměť firmy v jedné složce. Jeden fakt na jednom místě, se zdrojem a datem.
 
@@ -6,11 +6,11 @@
 
 | Vrstva | Co sem patří | Příklad |
 |---|---|---|
-| `00 CORE` | kánon firmy: profil, produkty a ceny, značka, pravidla; mění jen kapitán | `profil-firmy.md` |
+| `00 CORE` | kánon firmy: profil, produkty a ceny, brand manuál, pravidla; mění jen kapitán | `profil-firmy.md` |
 | `01 KONTEXT` | trh, konkurence, zákazníci, postřehy, rozhodnutí a proč | karta konkurenta |
 | `02 DATA` | čísla, výsledky, záznamy schůzek, vyhodnocení | report z kampaně |
-| `03 TOOLS` | nástroje a systémy, jak je používáme | popis systému agentů |
-| `04 SKILLS` | postupy a návody pro tým | jak připravit nabídku |
+| `03 TOOLS` | nástroje a systémy, jak je používáme | popis lodi a konektorů |
+| `04 SKILLS` | postupy a návody pro tým (firemní wiki) | jak připravit nabídku |
 
 ## Pravidla
 

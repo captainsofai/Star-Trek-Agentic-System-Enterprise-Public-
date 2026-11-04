@@ -1,16 +1,20 @@
 # Profil firmy (šablona)
 
-Uložte jako `profil-firmy.md` do připojené složky. Čtou ho všechny stanice před každou prací. Co nevíte, nechte prázdné; stanice se zeptají, nedomýšlejí si.
+Uložte jako `profil-firmy.md` do připojené složky (a kopii do `Knihovna/00 CORE/`). Čtou ho všechny stanice před každou prací. Vyplňuje ho onboarding; co nevíte, nechte prázdné, stanice se zeptají a nic si nedomýšlejí.
 
 ## 1. Kapitán
-- Jméno a jak vás oslovovat (například „Kapitáne", nebo křestním jménem):
+- Jméno:
+- Oslovení (5. pád, například „Kapitáne Petře"):
 - Vykání, nebo tykání:
-- Kdy nemáte čas na zprávy (například při poradách nebo po 18:00):
+- Kdy nerušit (například při poradách nebo po 18:00):
+- Začátek dne a co chce vidět v ranním briefu:
 
 ## 2. Firma
-- Název, obor, kde působíte:
+- Název, obor, region:
 - Jedna věta, co děláte a pro koho:
-- Máte víc firem? Každou zvlášť (čísla, kanály a data se nemíchají):
+- Velikost (lidé, obrat jen pokud chcete):
+- Web:
+- Víc firem? Každou zvlášť (čísla, kanály a data se nemíchají):
 
 ## 3. Produkty a ceny (bez DPH)
 | Produkt nebo služba | Pro koho | Cena bez DPH | Poznámka |
@@ -19,7 +23,7 @@ Uložte jako `profil-firmy.md` do připojené složky. Čtou ho všechny stanice
 ## 4. Zákazníci a obchod
 - Ideální zákazník (velikost, obor, region):
 - Odkud chodí zakázky (doporučení, web, akce, oslovení):
-- Kde máte CRM a pipeline (Notion, jiný nástroj, tabulka):
+- CRM a pipeline (kde, jaké fáze):
 
 ## 5. Tón a značka
 - Jak mluvíte se zákazníky (3 slova):
@@ -33,11 +37,17 @@ Uložte jako `profil-firmy.md` do připojené složky. Čtou ho všechny stanice
 ## 7. Kde leží data
 - E-mail a kalendář:
 - Soubory a dokumenty:
-- Notion (fronta týmu, CRM, znalosti):
+- Notion nebo jiné databáze (fronta týmu, CRM, wiki):
 - Fakturace:
-- Web:
+- Web a repo:
 
-## 8. Priority na 90 dní
-1.
-2.
-3.
+## 8. Kurz
+- Priority na 90 dní (nejvýš 3, každá s číslem):
+- Co nejvíc pálí nebo bere čas (3 věci):
+
+## 9. Naladění lodi
+| Co pálí | Stanice | První rituál |
+|---|---|---|
+
+- Zapnuté rituály a časy:
+- Engage (autonomní běh): ne / Google Cloud / Mac mini

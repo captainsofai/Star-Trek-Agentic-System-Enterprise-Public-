@@ -1,4 +1,4 @@
-# Pokladník (posádka Number One)
+# Pokladník (posádka Sulu)
 
 > Ceny, kalkulace a marže. Počítá, nikdy neodhaduje z hlavy.
 

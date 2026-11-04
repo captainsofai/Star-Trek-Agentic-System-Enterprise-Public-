@@ -1,0 +1,24 @@
+{
+  "data_dir": "~/Enterprise",
+  "plugin_dir": "../plugin",
+  "ritualy": "ritualy.json",
+  "mcp_config": "mcp.json",
+  "timezone": "Europe/Prague",
+  "model": "",
+  "max_budget_usd": 2,
+  "timeout_s": 1800,
+  "nastroje_bezne": [
+    "Skill", "Read", "Write", "Edit", "Glob", "Grep", "WebSearch"
+  ],
+  "nastroje_ven": [],
+  "env_pro_agenta": [
+    "ANTHROPIC_API_KEY",
+    "CLAUDE_CODE_USE_VERTEX", "ANTHROPIC_VERTEX_PROJECT_ID", "CLOUD_ML_REGION"
+  ],
+  "_napoveda": {
+    "nastroje_bezne": "Nástroje pro každý běh: čtení, koncepty, vratné zápisy. MCP server celý: \"mcp__nazev\"; jeden nástroj: \"mcp__nazev__nastroj\". Bash a WebFetch sem nedávejte.",
+    "nastroje_ven": "Nástroje, které jednají ven (odeslat e-mail, publikovat, fakturovat naostro). V běžném běhu jsou zakázané, povolí se jen v běhu po „Proveďte <ID>\". Příklad: \"mcp__email__send\".",
+    "env_pro_agenta": "Proměnné, které agent a MCP servery dostanou. Tokeny MCP serverů sem přidejte jménem (hodnoty jsou v Klíčence nebo v Secret Manageru).",
+    "model": "Prázdné = výchozí model Claude Code."
+  }
+}

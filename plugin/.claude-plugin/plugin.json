@@ -1,7 +1,7 @@
 {
   "name": "star-trek-agentic-system-enterprise",
-  "version": "1.0.0",
-  "description": "Star Trek Agentic System Enterprise: systém AI agentů pro podnikatele a CEO. Pět stanic v Claude: Picard (orchestrátor a pravá ruka CEO, ranní brief, porada, uzávěrka), Number One (finance, obchod, růst, agenda), Uhura (marketing a obsah), Spock (znalosti, data, zpětná vazba) a Scotty (systém, bezpečnost, oživení webů). Nic neodesílá ani nepublikuje bez Proveďte.",
+  "version": "2.0.0",
+  "description": "USS Enterprise: agentní enterprise systém pro řízení firmy. Šest stanic v Claude: Picard (orchestrátor, velitel posádky, plán), Number One (tým, kalendář, agenda), Sulu (kormidelník, obchod, CRM), Uhura (komunikace, marketing, brand, sociální sítě), Spock (logika, wiki, databáze, podklady, znalosti) a Scotty (engineering, Engage, výroba webů, aplikací a prezentací). Onboarding naladí loď na vaši firmu; Engage ji pustí autonomně na Mac mini nebo Google Cloud. Nic neodesílá ani nepublikuje bez Proveďte.",
   "author": {
     "name": "Captains of AI"
   },
@@ -9,7 +9,9 @@
   "keywords": [
     "ceo",
     "podnikatel",
+    "rizeni-firmy",
     "agenti",
+    "enterprise",
     "claude",
     "cesky"
   ]
