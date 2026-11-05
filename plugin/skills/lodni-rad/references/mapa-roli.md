@@ -30,7 +30,7 @@
 | Zákaznická podpora a reklamace | Sulu | dotazy zákazníků, odpovědi jako koncepty, řešení reklamací |
 | IT, nástroje a bezpečnost | Scotty | konektory, přístupy, zálohy, technická část GDPR |
 | Vývoj: weby, aplikace, prezentace | Scotty | stavba, automatizace, nasazení po „Proveďte" |
-| Systém a jeho aktualizace | Scotty | onboarding, Engage, revize systému, opravy stanic |
-| Red team a interní audit | Q (mimo posádku) | prověrka rozhodnutí a výstupů před „Proveďte", pre-mortem, audit stanic, soud nad kurzem |
+| Systém a jeho aktualizace | Scotty | onboarding, Warp, revize systému, opravy stanic |
+| Kontrola, audit a učení systému | Q (mimo posádku) | kontrola před „Proveďte", pre-mortem, audit stanic, lekce a update verzí, soud nad kurzem |
 
-Firma bez některé role (například bez výroby nebo bez zaměstnanců) ji v profilu firmy vypne; stanice se jí pak nevěnuje. Když jedna role zabere víc než den v týdnu, Scotty navrhne novou stanici (`nova-stanice`).
+Firma bez některé role (například bez výroby nebo bez zaměstnanců) ji v profilu firmy vypne; stanice se jí pak nevěnuje. Když jedna role zabere víc než den v týdnu, Q to zapíše jako lekci a Scotty navrhne novou stanici (`nova-stanice`).

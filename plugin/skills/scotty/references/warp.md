@@ -1,13 +1,13 @@
-# Engage: autonomní agentní systém (Scotty)
+# Warp: autonomní agentní systém (Scotty)
 
-> **Axiom:** „Engage." Loď už nečeká, až kapitán otevře chat. Běží sama podle plánu, hlásí se kapitánovi a ven jedná jen na jeho „Proveďte".
+> **Axiom:** „Warp 1." Loď už nečeká, až kapitán otevře chat. Běží sama podle plánu, hlásí se kapitánovi a ven jedná jen na jeho „Proveďte".
 
-## Co Engage dává
+## Co Warp dává
 
 1. **Běží sám:** rituály (ranní brief, sync, kurz obchodu, smyčka) se spouští podle plánu bez otevřeného chatu.
-2. **Velín v kapsě:** hlášení chodí kapitánovi do soukromého chatu (výchozí je Telegram bot). Z telefonu dává rozkazy (`/sulu kurz`, „připrav podklady na zítřek") a schvaluje „Proveďte &lt;ID&gt;".
+2. **Velín v kapsě:** hlášení chodí kapitánovi do soukromého chatu (výchozí je Telegram bot). Z telefonu dává rozkazy (`/sulu kurz`, „připrav podklady na zítřek") a schvaluje `Proveďte <ID>`.
 3. **Pravé agenty:** každá stanice běží jako agent Claude se svými skilly, nástroji (MCP konektory) a lodními daty (profil firmy, agenda, Knihovna).
-4. **Bezpečně autonomní:** v běžném běhu nástroje ven v běhu vůbec nejsou. Akci ven stanice jen zapíše jako návrh do `navrhy/<ID>.md`. Teprve po „Proveďte &lt;ID&gt;" od kapitána běží jeden schválený běh s nástroji ven, jen na ten návrh.
+4. **Bezpečně autonomní:** v běžném běhu nástroje ven v běhu vůbec nejsou. Akci ven stanice jen zapíše jako návrh do `navrhy/<ID>.md`. Teprve po `Proveďte <ID>` od kapitána běží jeden schválený běh s nástroji ven, jen na ten návrh.
 5. **Pod kontrolou:** strop na cenu běhu, červený poplach (`/stop`) zastaví všechno, každý běh má hlášení v `hlaseni/` a záznam v `logs/`.
 
 ## Dvě cesty
@@ -29,13 +29,13 @@
 
    Všechno vkládá rovnou do trezoru, nikdy do chatu.
 2. **Konektory pro autonomní běh:**
-   - konektory z aplikace Claude se do serveru nepřenesou: pro každý nástroj (e-mail, kalendář, Notion, CRM, fakturace) vyberte MCP server, který funguje s tokenem, a zapište ho do `mcp.json` podle `engage/mcp.example.json`; tokeny jdou jen jako proměnné z trezoru;
+   - konektory z aplikace Claude se do serveru nepřenesou: pro každý nástroj (e-mail, kalendář, Notion, CRM, fakturace) vyberte MCP server, který funguje s tokenem, a zapište ho do `mcp.json` podle `warp/mcp.example.json`; tokeny jdou jen jako proměnné z trezoru;
    - `nastroje_bezne` v `config.json`: čtení, koncepty, vratné zápisy;
    - `nastroje_ven` v `config.json`: odeslání, publikace, faktura naostro.
-3. **Instalace:** na Mac mini `engage/mac/install.sh` (lodní data v `~/Enterprise`, tajemství do Klíčenky, služba), na Google Cloudu `engage/gcp/setup.sh` (bucket, tajemství, Cloud Run, plánovač rituálů a webhook bota). Každý příkaz, který něco zakládá nebo stojí peníze, ukážete předem a spustíte ho až na „Proveďte".
-4. **Rituály:** z profilu firmy vyplníte `engage/ritualy.json` (časy, stanice, zadání). Začněte třemi a ostatní přidávejte postupně.
+3. **Instalace:** na Mac mini `warp/mac/install.sh` (lodní data v `~/Enterprise`, tajemství do Klíčenky, služba), na Google Cloudu `warp/gcp/setup.sh` (bucket, tajemství, Cloud Run, plánovač rituálů a webhook bota). Každý příkaz, který něco zakládá nebo stojí peníze, ukážete předem a spustíte ho až na „Proveďte".
+4. **Rituály:** z profilu firmy vyplníte `warp/ritualy.json` (časy, stanice, zadání). Začněte třemi a ostatní přidávejte postupně.
 5. **Zkouška a předání:**
-   - `python3 engage/velin.py ritual ranni-brief` a pak jeden rozkaz z telefonu;
+   - `python3 warp/velin.py ritual ranni-brief` a pak jeden rozkaz z telefonu;
    - jeden zkušební návrh a „Proveďte" s neškodnou akcí (koncept místo odeslání);
    - `/stop` a `/start`.
 
@@ -51,6 +51,6 @@
 
 ## Hranice
 
-1. Engage nikdy nezmírní Lodní řád. Bez „Proveďte" nic ven.
+1. Warp nikdy nezmírní Lodní řád. Bez „Proveďte" nic ven.
 2. Velín přijímá příkazy jen z chatu kapitána (`TELEGRAM_CHAT_ID`); na Google Cloudu jen s tajným tokenem webhooku a plánovače.
 3. Na Mac mini doporučte samostatného uživatele macOS jen pro loď, šifrování disku (FileVault) a automatické aktualizace; agent nemá přístup mimo lodní data.

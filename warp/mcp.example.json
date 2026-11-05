@@ -1,0 +1,15 @@
+{
+  "_napoveda": "Šablona. Za každý nástroj firmy (e-mail a kalendář, Notion nebo CRM, fakturace) doplní Scotty při Warpu MCP server, který funguje s tokenem, a ověří ho podle jeho aktuální dokumentace. Tokeny nikdy nepište sem: jen ${PROMENNA}, hodnota je v Klíčence nebo v Secret Manageru a jméno proměnné patří do env_pro_agenta v config.json.",
+  "mcpServers": {
+    "crm": {
+      "command": "npx",
+      "args": ["-y", "<balicek-mcp-serveru-pro-vase-crm>"],
+      "env": { "API_TOKEN": "${CRM_TOKEN}" }
+    },
+    "kalendar": {
+      "type": "http",
+      "url": "https://<adresa-mcp-serveru-kalendare>/mcp",
+      "headers": { "Authorization": "Bearer ${KALENDAR_TOKEN}" }
+    }
+  }
+}

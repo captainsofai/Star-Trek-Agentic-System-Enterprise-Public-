@@ -1,10 +1,10 @@
-# Engage: USS Enterprise jako autonomní agentní systém
+# Warp: USS Enterprise jako autonomní agentní systém
 
-> **Axiom:** „Engage." Loď už nečeká, až kapitán otevře chat. Běží sama podle plánu, hlásí se kapitánovi a ven jedná jen na jeho „Proveďte".
+> **Axiom:** „Warp 1." Loď už nečeká, až kapitán otevře chat. Běží sama podle plánu, hlásí se kapitánovi a ven jedná jen na jeho „Proveďte".
 
-Engage spustí stanice lodi jako agenty Claude (Claude Code v režimu bez obsluhy) na **Mac mini** nebo na **Google Cloudu**. Celé to vede Scotty: v Claude napište `/scotty engage` a on vás provede krok za krokem. Tahle složka je kód, který přitom použije.
+Warp spustí stanice lodi jako agenty Claude (Claude Code v režimu bez obsluhy) na **Mac mini** nebo na **Google Cloudu**. Celé to vede Scotty: v Claude napište `/scotty warp` a on vás provede krok za krokem. Tahle složka je kód, který přitom použije.
 
-## Jak loď v režimu Engage běží
+## Jak loď v režimu Warp běží
 
 1. **Rituály podle plánu:** `ritualy.json` (cron, místní čas). Na Mac mini je spouští plánovač ve Velínu, na Google Cloudu Cloud Scheduler.
 2. **Velín v telefonu:** soukromý chat s Telegram botem. Chodí do něj hlášení a z něj kapitán dává rozkazy:
@@ -13,6 +13,7 @@ Engage spustí stanice lodi jako agenty Claude (Claude Code v režimu bez obsluh
    |---|---|
    | libovolný text | rozkaz Picardovi, ten ho rozdělí stanicím |
    | `/sulu kurz`, `/picard projekty`, `/number-one rano`, … | rozkaz konkrétní stanici |
+   | `Engage [ID]` | start mise, kterou Picard naplánoval (`mise/<ID>.md`) |
    | `Proveďte <ID>` | jeden schválený běh s nástroji ven, jen na návrh `<ID>` |
    | `/stav` | poslední hlášení a čekající návrhy |
    | `/stop` (červený poplach) a `/start` | zastavení a obnovení lodi |
@@ -40,7 +41,7 @@ Každý běh uloží hlášení do `hlaseni/`, Velín zapisuje do `logs/`. Na ka
 1. Nainstalujte Claude Code (`npm install -g @anthropic-ai/claude-code`).
 2. Stáhněte toto repo, třeba `git clone` do domovské složky.
 3. Po onboardingu uložte `profil-firmy.md` do `~/Enterprise/`.
-4. Spusťte `engage/mac/install.sh`. Vloží tajemství do Klíčenky (klíč Claude API, token bota, vaše chat ID) a zapne službu.
+4. Spusťte `warp/mac/install.sh`. Vloží tajemství do Klíčenky (klíč Claude API, token bota, vaše chat ID) a zapne službu.
 5. Konektory: `~/Enterprise/.velin/mcp.json` podle šablony. Jména tokenů přidejte do `tajemstvi.txt` a `env_pro_agenta` a znovu spusťte instalaci.
 
 Doporučení: samostatný uživatel macOS jen pro loď s automatickým přihlášením, FileVault, automatické aktualizace a režim bez uspání.
@@ -48,9 +49,9 @@ Doporučení: samostatný uživatel macOS jen pro loď s automatickým přihlá�
 ## Google Cloud
 
 ```bash
-PROJECT=<id-projektu> REGION=europe-west1 ./engage/gcp/setup.sh
+PROJECT=<id-projektu> REGION=europe-west1 ./warp/gcp/setup.sh
 # Claude přes Vertex AI místo klíče Claude API:
-PROJECT=<id-projektu> USE_VERTEX=1 VERTEX_REGION=<region> ./engage/gcp/setup.sh
+PROJECT=<id-projektu> USE_VERTEX=1 VERTEX_REGION=<region> ./warp/gcp/setup.sh
 ```
 
 Skript se před každým krokem zeptá:

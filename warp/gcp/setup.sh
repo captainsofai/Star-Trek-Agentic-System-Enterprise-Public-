@@ -1,5 +1,5 @@
 #!/bin/bash
-# USS Enterprise: Engage na Google Cloud.
+# USS Enterprise: Warp na Google Cloud.
 # Cloud Run služba (Velín), Cloud Storage jako disk lodi, Secret Manager, Cloud Scheduler pro rituály a webhook Telegramu.
 # Každý krok, který zakládá prostředky nebo stojí peníze, se nejdřív zeptá.
 set -euo pipefail
@@ -17,7 +17,7 @@ TZ_RITUALY="${TZ_RITUALY:-Europe/Prague}"
 
 ano() { read -r -p "$1 [ano/ne] " o; [ "$o" = "ano" ]; }
 
-echo "🖖 USS Enterprise: Engage na Google Cloud (projekt $PROJECT, region $REGION)"
+echo "🖖 USS Enterprise: Warp na Google Cloud (projekt $PROJECT, region $REGION)"
 gcloud config set project "$PROJECT" >/dev/null
 
 if ano "1/6 Zapnout služby (Run, Scheduler, Secret Manager, Artifact Registry, Cloud Build, Storage)?"; then
@@ -34,12 +34,12 @@ if ano "2/6 Založit servisní účet $SLUZBA a soukromý bucket gs://$BUCKET?";
   [ "$USE_VERTEX" = "1" ] && gcloud projects add-iam-policy-binding "$PROJECT" --member "serviceAccount:$SA" --role roles/aiplatform.user >/dev/null
   python3 - "$REPO" <<'PY' > /tmp/uss-config.json
 import json, sys
-c = json.load(open(f"{sys.argv[1]}/engage/config.example.json", encoding="utf-8"))
+c = json.load(open(f"{sys.argv[1]}/warp/config.example.json", encoding="utf-8"))
 c.update(data_dir="/data", plugin_dir="/app/plugin", ritualy="/data/.velin/ritualy.json", mcp_config="/data/.velin/mcp.json")
 print(json.dumps(c, ensure_ascii=False, indent=2))
 PY
   gcloud storage cp -n /tmp/uss-config.json "gs://$BUCKET/.velin/config.json"
-  gcloud storage cp -n "$REPO/engage/ritualy.json" "gs://$BUCKET/.velin/ritualy.json"
+  gcloud storage cp -n "$REPO/warp/ritualy.json" "gs://$BUCKET/.velin/ritualy.json"
   echo "Profil firmy nahrajte do gs://$BUCKET/profil-firmy.md (po onboardingu)."
 fi
 
@@ -64,7 +64,7 @@ if ano "4/6 Sestavit obraz Velínu (Cloud Build)?"; then
   cat > /tmp/uss-build.yaml <<YAML
 steps:
 - name: gcr.io/cloud-builders/docker
-  args: ["build", "-t", "$IMAGE", "-f", "engage/gcp/Dockerfile", "."]
+  args: ["build", "-t", "$IMAGE", "-f", "warp/gcp/Dockerfile", "."]
 images: ["$IMAGE"]
 YAML
   gcloud builds submit "$REPO" --config /tmp/uss-build.yaml
@@ -84,7 +84,7 @@ fi
 URL="$(gcloud run services describe "$SLUZBA" --region "$REGION" --format 'value(status.url)')"
 if ano "6/6 Založit rituály v Cloud Scheduleru a webhook Telegramu ($URL)?"; then
   RT="$(gcloud secrets versions access latest --secret RITUAL_TOKEN)"
-  python3 - "$REPO/engage/ritualy.json" <<'PY' | while IFS=$'\t' read -r ID KDY; do
+  python3 - "$REPO/warp/ritualy.json" <<'PY' | while IFS=$'\t' read -r ID KDY; do
 import json, sys
 for r in json.load(open(sys.argv[1], encoding="utf-8")):
     if r.get("zapnuto", True):
@@ -102,4 +102,4 @@ PY
   curl -fsS "https://api.telegram.org/bot$TG/setWebhook" --data-urlencode "url=$URL/telegram" --data-urlencode "secret_token=$WS" >/dev/null
   echo "✓ webhook Telegramu nastaven"
 fi
-echo "🖖 Engage. Zkouška: napište botovi /stav. Zastavení lodi: /stop."
+echo "🖖 Warp 1. Zkouška: napište botovi /stav. Zastavení lodi: /stop."

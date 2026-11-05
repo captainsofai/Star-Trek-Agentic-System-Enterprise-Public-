@@ -1,7 +1,7 @@
 {
   "name": "star-trek-agentic-system-enterprise",
-  "version": "1.2.0",
-  "description": "USS Enterprise: agentní enterprise systém pro řízení jakékoli firmy. Sedm stanic v Claude pokrývá všechny role firmy: Picard (CEO a orchestrátor), Number One (asistent: kalendář, akce, pokladna), Kirk (HR), Spock (logika, knowledge, feedback, compliance), Uhura (komunikace, marketing), Sulu (kormidelník, obchod, zákaznická podpora) a Scotty (engineering, stavba, aktualizace systému), k tomu Q jako nezávislý red team a audit. Onboarding naladí loď na vaši firmu; Engage ji pustí autonomně na Mac mini nebo Google Cloud. Nic neodesílá ani nepublikuje bez Proveďte.",
+  "version": "1.3.0",
+  "description": "USS Enterprise: agentní enterprise systém pro řízení jakékoli firmy. Sedm stanic a Q v Claude pokrývají všech 28 rolí firmy: Picard (CEO a orchestrátor), Number One (asistent a pokladna), Kirk (HR), Spock (knowledge a compliance), Uhura (marketing), Sulu (obchod a zákazníci), Scotty (engineering) a Q (kontrola a učení). Mise startuje „Engage\", ven nic bez „Proveďte\", Warp pustí loď autonomně na Mac mini nebo Google Cloud.",
   "author": {
     "name": "Captains of AI"
   },

@@ -52,4 +52,4 @@ Uložte jako `profil-firmy.md` do připojené složky (a kopii do `Knihovna/00 C
 
 - Zapnuté rituály a časy:
 - Role vypnuté podle mapy rolí (`mapa-roli.md`):
-- Engage (autonomní běh): ne / Google Cloud / Mac mini
+- Warp (autonomní běh): ne / Google Cloud / Mac mini

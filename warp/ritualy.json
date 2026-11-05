@@ -11,6 +11,6 @@
   {"id": "uzaverka", "nazev": "Měsíční uzávěrka", "kdy": "30 9 1 * *", "stanice": "picard", "prikaz": "uzaverka", "zapnuto": false},
   {"id": "revize", "nazev": "Revize systému", "kdy": "0 10 2 * *", "stanice": "scotty", "prikaz": "revize", "zapnuto": false},
   {"id": "lide", "nazev": "Lidé", "kdy": "30 9 3 * *", "stanice": "kirk", "prikaz": "lide", "zapnuto": false},
-  {"id": "soud-q", "nazev": "Soud Q", "kdy": "0 10 15 * *", "stanice": "q", "prikaz": "audit", "zapnuto": false},
+  {"id": "kontrola-update", "nazev": "Kontrola a update", "kdy": "0 10 15 * *", "stanice": "q", "prikaz": "update", "zapnuto": false},
   {"id": "kurz-q", "nazev": "Soud nad kurzem", "kdy": "0 10 1 1,4,7,10 *", "stanice": "q", "prikaz": "strategie", "zapnuto": false}
 ]

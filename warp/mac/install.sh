@@ -1,5 +1,5 @@
 #!/bin/bash
-# USS Enterprise: Engage na Mac mini.
+# USS Enterprise: Warp na Mac mini.
 # Založí lodní data, uloží tajemství do Klíčenky a zapne Velín jako službu launchd.
 set -euo pipefail
 
@@ -9,7 +9,7 @@ VELIN="$DATA/.velin"
 LABEL="cz.uss-enterprise.velin"
 PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
 
-echo "🖖 USS Enterprise: Engage na Mac mini"
+echo "🖖 USS Enterprise: Warp na Mac mini"
 command -v python3 >/dev/null || { echo "Chybí python3 (xcode-select --install)."; exit 1; }
 CLAUDE="$(command -v claude || true)"
 [ -n "$CLAUDE" ] || { echo "Chybí Claude Code: npm install -g @anthropic-ai/claude-code"; exit 1; }
@@ -21,13 +21,13 @@ if [ ! -f "$VELIN/config.json" ]; then
   python3 - "$REPO" "$DATA" "$VELIN" <<'PY'
 import json, sys
 repo, data, velin = sys.argv[1:]
-c = json.load(open(f"{repo}/engage/config.example.json", encoding="utf-8"))
+c = json.load(open(f"{repo}/warp/config.example.json", encoding="utf-8"))
 c.update(data_dir=data, plugin_dir=f"{repo}/plugin", ritualy=f"{velin}/ritualy.json", mcp_config=f"{velin}/mcp.json")
 json.dump(c, open(f"{velin}/config.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 PY
   echo "✓ Nastavení: $VELIN/config.json"
 fi
-[ -f "$VELIN/ritualy.json" ] || cp "$REPO/engage/ritualy.json" "$VELIN/ritualy.json"
+[ -f "$VELIN/ritualy.json" ] || cp "$REPO/warp/ritualy.json" "$VELIN/ritualy.json"
 [ -f "$VELIN/tajemstvi.txt" ] || printf "ANTHROPIC_API_KEY\nTELEGRAM_BOT_TOKEN\nTELEGRAM_CHAT_ID\n" > "$VELIN/tajemstvi.txt"
 
 echo "Tajemství jdou jen do Klíčenky (služba uss-enterprise). Seznam jmen: $VELIN/tajemstvi.txt"
@@ -48,7 +48,7 @@ while read -r N; do
   [ -n "\$N" ] || continue
   V="\$(security find-generic-password -s uss-enterprise -a "\$N" -w 2>/dev/null)" && export "\$N=\$V"
 done < "$VELIN/tajemstvi.txt"
-exec /usr/bin/env python3 "$REPO/engage/velin.py" polling
+exec /usr/bin/env python3 "$REPO/warp/velin.py" polling
 SH
 chmod 700 "$VELIN/start.sh"
 

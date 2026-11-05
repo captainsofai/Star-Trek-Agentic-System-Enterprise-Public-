@@ -1,5 +1,5 @@
 # USS Enterprise: Velín pro Google Cloud Run.
-# Sestavení z kořene repa: docker build -f engage/gcp/Dockerfile .
+# Sestavení z kořene repa: docker build -f warp/gcp/Dockerfile .
 FROM node:22-slim
 RUN apt-get update \
  && apt-get install -y --no-install-recommends python3 ca-certificates git \
@@ -7,6 +7,6 @@ RUN apt-get update \
  && npm install -g @anthropic-ai/claude-code
 WORKDIR /app
 COPY plugin /app/plugin
-COPY engage /app/engage
+COPY warp /app/warp
 ENV LANG=C.UTF-8 PYTHONUNBUFFERED=1 ENTERPRISE_CONFIG=/data/.velin/config.json
-CMD ["python3", "/app/engage/velin.py", "server"]
+CMD ["python3", "/app/warp/velin.py", "server"]

@@ -40,7 +40,7 @@ Po pěti krocích (nebo dřív, když kapitán chce rychle začít):
 2. **Založte lodní data:**
    - `CEO/agenda.md` (Otevřené, Hotovo);
    - `Knihovna/` ve vrstvách `00 CORE`, `01 CONTEXT`, `02 TOOLS`, `03 SKILLS` s `INDEX.md` (viz skill `spock`);
-   - `navrhy/` a `hlaseni/`.
+   - `mise/`, `navrhy/`, `hlaseni/` a `lekce/`.
 
    Profil firmy patří i do `Knihovna/00 CORE/`.
 3. **Nalaďte stanice podle toho, co pálí:** ke každé ze tří bolestí přiřaďte stanici a první rituál. Příklady:
@@ -57,7 +57,7 @@ Po pěti krocích (nebo dřív, když kapitán chce rychle začít):
    - stav obchodů od Sulu;
    - plán obsahu na týden od Uhury.
 
-   Nakonec nabídněte **Engage**: autonomní běh lodi na Google Cloudu nebo na Mac mini (skill `scotty`, příkaz `engage`).
+   Nakonec nabídněte **Warp**: autonomní běh lodi na Google Cloudu nebo na Mac mini (skill `scotty`, příkaz `warp`).
 
 ## Hranice a tón
 
