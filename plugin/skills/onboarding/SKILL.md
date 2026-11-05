@@ -15,7 +15,7 @@ Když máte nástroj na otázky s nabídkou možností, použijte ho; jinak se p
 
 ## Pět kroků
 
-1. **Přivítání a oslovení.** Krátce představte loď: šest stanic, Picard velí, nic nejde ven bez „Proveďte". Zeptejte se:
+1. **Přivítání a oslovení.** Krátce představte loď: sedm stanic a Q jako nezávislý red team, Picard je CEO a orchestrátor, nic nejde ven bez „Proveďte". Zeptejte se:
    - na jméno a jak ho oslovovat (navrhněte 5. pád, například „Kapitáne Petře");
    - na vykání, nebo tykání;
    - kdy nechce být rušen.
@@ -25,14 +25,12 @@ Když máte nástroj na otázky s nabídkou možností, použijte ho; jinak se p
 3. **Jak firma vydělává.** Produkty nebo služby a ceny bez DPH. Ideální zákazník. Odkud chodí zakázky. Kde je CRM a pipeline (Notion, jiný nástroj, tabulka, nikde).
 4. **Tým a nástroje.**
    - Kdo je v týmu a za co odpovídá.
-   - Kde je e-mail a kalendář, soubory, Notion, fakturace a web.
-   - Zkontrolujte, které konektory jsou v Claude připojené. Chybějící jen vyjmenujte s tím, k čemu jsou; přihlášení dělá kapitán.
+   - Kde je e-mail a kalendář, soubory, Notion, fakturace a web. Zkontrolujte, které konektory jsou v Claude připojené. Chybějící jen vyjmenujte s tím, k čemu jsou; přihlášení dělá kapitán.
    - Zeptejte se na tón značky: 3 slova, co nikdy nepsat, podpis.
 5. **Kurz.**
    - Nejvýš 3 priority na 90 dní.
    - Tři věci, které kapitána ve firmě nejvíc pálí nebo berou čas.
-   - Co chce vidět v ranním briefu.
-   - V kolik začíná den.
+   - Co chce vidět v ranním briefu a v kolik začíná den.
 
 ## Naladění lodi
 
@@ -41,16 +39,16 @@ Po pěti krocích (nebo dřív, když kapitán chce rychle začít):
 1. **Uložte `profil-firmy.md`** podle `../lodni-rad/references/profil-firmy-sablona.md` do připojené složky. Ukažte kapitánovi shrnutí v 5 bodech a nechte ho opravit.
 2. **Založte lodní data:**
    - `CEO/agenda.md` (Otevřené, Hotovo);
-   - `Knihovna/` v pěti vrstvách s `INDEX.md` (viz skill `spock`);
+   - `Knihovna/` ve vrstvách `00 CORE`, `01 CONTEXT`, `02 TOOLS`, `03 SKILLS` s `INDEX.md` (viz skill `spock`);
    - `navrhy/` a `hlaseni/`.
 
    Profil firmy patří i do `Knihovna/00 CORE/`.
 3. **Nalaďte stanice podle toho, co pálí:** ke každé ze tří bolestí přiřaďte stanici a první rituál. Příklady:
-   - chaos v týmu: Number One, sync;
-   - málo zakázek: Sulu, kurz obchodu;
+   - chaos v práci, kalendáři nebo dokladech: Picard s frontou a syncem, Number One s ranním briefem a pokladnou;
+   - chybí lidé nebo se tým rozpadá: Kirk, nábor a 1:1;
+   - málo zakázek nebo nespokojení zákazníci: Sulu, kurz obchodu a podpora;
    - nikdo o nás neví: Uhura, obsah;
-   - hledáme pořád dokola: Spock, Knihovna;
-   - ruční práce: Scotty, automatizace.
+   - hledáme pořád dokola, hlídáme smlouvy nebo děláme ručně: Spock s wiki a compliance, Scotty s automatizací.
 
    Zapište to do profilu do sekce „Naladění lodi".
 4. **Navrhněte rituály** z `../lodni-rad/references/ritualy.md` s časy podle kapitánova dne; začněte nejvýš třemi (vždy ranní brief), další přidáte za týden. Založíte je na „Proveďte", jako naplánované úlohy v Claude.

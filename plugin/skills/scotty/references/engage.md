@@ -24,19 +24,15 @@
 
 1. **Výběr cesty a příprava:** Mac mini, nebo Google Cloud. Ověřte, že je hotový onboarding (`profil-firmy.md`). Kapitán založí:
    - Telegram bota (BotFather) a zjistí své chat ID;
-   - klíč k modelu (Claude API, nebo projekt s Vertex AI).
+   - klíč k modelu (Claude API, nebo projekt s Vertex AI);
+   - výběr tří rituálů, které poběží jako první.
 
    Všechno vkládá rovnou do trezoru, nikdy do chatu.
 2. **Konektory pro autonomní běh:**
-   - Konektory z aplikace Claude se do serveru nepřenesou. Pro každý nástroj (e-mail, kalendář, Notion, CRM, fakturace) vyberte MCP server, který funguje s tokenem, a zapište ho do `mcp.json` podle `engage/mcp.example.json`. Tokeny jdou jen jako proměnné z trezoru.
-   - Nástroje rozdělte do dvou skupin v `config.json`:
-     - `nastroje_bezne`: čtení, koncepty, vratné zápisy;
-     - `nastroje_ven`: odeslání, publikace, faktura naostro.
-3. **Instalace:**
-   - Mac mini: `engage/mac/install.sh`. Založí lodní data v `~/Enterprise`, uloží tajemství do Klíčenky a zapne službu.
-   - Google Cloud: `engage/gcp/setup.sh`. Projekt, bucket, tajemství, Cloud Run, plánovač rituálů a webhook bota.
-
-   Každý příkaz, který něco zakládá nebo stojí peníze, ukážete předem a spustíte ho až na „Proveďte".
+   - konektory z aplikace Claude se do serveru nepřenesou: pro každý nástroj (e-mail, kalendář, Notion, CRM, fakturace) vyberte MCP server, který funguje s tokenem, a zapište ho do `mcp.json` podle `engage/mcp.example.json`; tokeny jdou jen jako proměnné z trezoru;
+   - `nastroje_bezne` v `config.json`: čtení, koncepty, vratné zápisy;
+   - `nastroje_ven` v `config.json`: odeslání, publikace, faktura naostro.
+3. **Instalace:** na Mac mini `engage/mac/install.sh` (lodní data v `~/Enterprise`, tajemství do Klíčenky, služba), na Google Cloudu `engage/gcp/setup.sh` (bucket, tajemství, Cloud Run, plánovač rituálů a webhook bota). Každý příkaz, který něco zakládá nebo stojí peníze, ukážete předem a spustíte ho až na „Proveďte".
 4. **Rituály:** z profilu firmy vyplníte `engage/ritualy.json` (časy, stanice, zadání). Začněte třemi a ostatní přidávejte postupně.
 5. **Zkouška a předání:**
    - `python3 engage/velin.py ritual ranni-brief` a pak jeden rozkaz z telefonu;

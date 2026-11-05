@@ -12,7 +12,7 @@ Engage spustí stanice lodi jako agenty Claude (Claude Code v režimu bez obsluh
    | Zpráva | Co se stane |
    |---|---|
    | libovolný text | rozkaz Picardovi, ten ho rozdělí stanicím |
-   | `/sulu kurz`, `/number-one rano`, … | rozkaz konkrétní stanici |
+   | `/sulu kurz`, `/picard projekty`, `/number-one rano`, … | rozkaz konkrétní stanici |
    | `Proveďte <ID>` | jeden schválený běh s nástroji ven, jen na návrh `<ID>` |
    | `/stav` | poslední hlášení a čekající návrhy |
    | `/stop` (červený poplach) a `/start` | zastavení a obnovení lodi |
@@ -21,7 +21,8 @@ Engage spustí stanice lodi jako agenty Claude (Claude Code v režimu bez obsluh
    - každý běh načte plugin lodi (`../plugin`), lodní data (profil firmy, agenda, Knihovna) a MCP konektory z `mcp.json`;
    - v běžném běhu má agent jen `nastroje_bezne`, nástroje ven (`nastroje_ven`) jsou zakázané;
    - akci ven stanice zapíše jako návrh `navrhy/<ID>.md`.
-4. **Hlášení a záznamy:** každý běh uloží hlášení do `hlaseni/`, Velín zapisuje do `logs/`. Na každý běh je strop ceny (`max_budget_usd`) a času (`timeout_s`).
+
+Každý běh uloží hlášení do `hlaseni/`, Velín zapisuje do `logs/`. Na každý běh je strop ceny (`max_budget_usd`) a času (`timeout_s`).
 
 ## Soubory
 
@@ -36,10 +37,11 @@ Engage spustí stanice lodi jako agenty Claude (Claude Code v režimu bez obsluh
 
 ## Mac mini
 
-1. Nainstalujte Claude Code (`npm install -g @anthropic-ai/claude-code`) a stáhněte toto repo.
-2. Po onboardingu uložte `profil-firmy.md` do `~/Enterprise/`.
-3. Spusťte `engage/mac/install.sh`. Vloží tajemství do Klíčenky (klíč Claude API, token bota, vaše chat ID) a zapne službu.
-4. Konektory: `~/Enterprise/.velin/mcp.json` podle šablony. Jména tokenů přidejte do `tajemstvi.txt` a `env_pro_agenta` a znovu spusťte instalaci.
+1. Nainstalujte Claude Code (`npm install -g @anthropic-ai/claude-code`).
+2. Stáhněte toto repo, třeba `git clone` do domovské složky.
+3. Po onboardingu uložte `profil-firmy.md` do `~/Enterprise/`.
+4. Spusťte `engage/mac/install.sh`. Vloží tajemství do Klíčenky (klíč Claude API, token bota, vaše chat ID) a zapne službu.
+5. Konektory: `~/Enterprise/.velin/mcp.json` podle šablony. Jména tokenů přidejte do `tajemstvi.txt` a `env_pro_agenta` a znovu spusťte instalaci.
 
 Doporučení: samostatný uživatel macOS jen pro loď s automatickým přihlášením, FileVault, automatické aktualizace a režim bez uspání.
 
@@ -55,22 +57,17 @@ Skript se před každým krokem zeptá:
 1. zapne služby;
 2. založí servisní účet a soukromý bucket (disk lodi `/data`);
 3. uloží tajemství do Secret Manageru;
-4. sestaví obraz;
-5. nasadí Velín na Cloud Run s jednou stálou instancí;
-6. založí rituály v Cloud Scheduleru a webhook Telegramu.
+4. sestaví obraz a nasadí Velín na Cloud Run s jednou stálou instancí (dva dotazy);
+5. založí rituály v Cloud Scheduleru a webhook Telegramu.
 
 Profil firmy, `mcp.json` a úpravy rituálů nahrajete do bucketu (`gs://<bucket>/.velin/`).
 
 ## Bezpečnost
 
-1. **Bez „Proveďte" nic ven:**
-   - nástroje ven jsou v běžném běhu zakázané přímo v Claude Code (`--disallowedTools`), nejen v pokynech;
-   - povolí se jen v běhu po „Proveďte <ID>" a jen na ten návrh.
+1. **Bez „Proveďte" nic ven:** nástroje ven jsou v běžném běhu zakázané přímo v Claude Code (`--disallowedTools`), nejen v pokynech; povolí se jen v běhu po „Proveďte <ID>" a jen na ten návrh.
 2. **Tajemství jen v trezoru:** Klíčenka nebo Secret Manager. Agent dostane jen proměnné z `env_pro_agenta`, nikdy token bota ani tokeny Velínu. Bash a WebFetch agent nemá.
 3. **Jen kapitán:** Velín přijímá zprávy jen z `TELEGRAM_CHAT_ID`. Na Google Cloudu je webhook chráněný tajným tokenem Telegramu a rituály tokenem `RITUAL_TOKEN`; bucket je soukromý.
 4. **Brzda a strop:** `/stop` zastaví všechny běhy i rituály. Na každý běh je strop ceny a času, záznam každého běhu je v `logs/`.
-5. **Známá rizika:**
-   - injekce přes obsah zvenčí, třeba e-mail nebo web; proti ní stojí pravidla, návrhy místo akcí a schválení kapitánem;
-   - token webhooku a rituálů vidí správci projektu; rotujte je po 90 dnech.
+5. **Známá rizika:** injekce přes obsah zvenčí (e-mail, web), proti které stojí pravidla, návrhy místo akcí a schválení kapitánem; token webhooku a rituálů vidí správci projektu, rotujte je po 90 dnech.
 
 Star Trek je ochranná známka CBS Studios Inc.; tento projekt s ní není spojen ani jí podporován a jména používá jen jako metaforu velení lodi.

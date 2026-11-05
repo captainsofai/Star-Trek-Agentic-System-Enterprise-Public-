@@ -39,7 +39,7 @@ except ImportError:  # pragma: no cover
     ZoneInfo = None
 
 ZDE = Path(__file__).resolve().parent
-STANICE = ["picard", "number-one", "sulu", "uhura", "spock", "scotty"]
+STANICE = ["picard", "number-one", "kirk", "spock", "uhura", "sulu", "scotty", "q"]
 
 PRAVIDLA_ENGAGE = """Běžíte v autonomním režimu USS Enterprise (Engage) bez kapitána u obrazovky.
 1. Akci ven (e-mail, zpráva, publikace, platba, faktura naostro, smazání) neprovádějte. Zapište ji jako návrh do souboru navrhy/<ID>.md, kde ID je RRRRMMDD-HHMM-kratky-nazev, s poli: Stanice, Co, Komu, Přesné znění, Nástroj. ID uveďte v hlášení.
@@ -150,7 +150,7 @@ def spustit(zadani, nazev, ven=False, pravidla=PRAVIDLA_ENGAGE):
         cmd += ["--model", c["model"]]
     log(f"běh {nazev} (ven={ven}) začíná")
     try:
-        vysledek = subprocess.run(cmd, input=zadani, text=True, capture_output=True,
+        vysledek = subprocess.run(cmd, input=zadani, text=True, encoding="utf-8", errors="replace", capture_output=True,
                                   cwd=data, env=prostredi_agenta(), timeout=c["timeout_s"])
         text = vysledek.stdout.strip() or vysledek.stderr.strip() or "(prázdné hlášení)"
         if vysledek.returncode != 0:

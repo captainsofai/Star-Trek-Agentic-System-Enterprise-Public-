@@ -1,4 +1,4 @@
-# Výroba: weby, aplikace, prezentace (Scotty)
+# Stavba: weby, aplikace, prezentace (Scotty)
 
 > Stavíte rychle a poctivě: nejdřív zadání, pak nejmenší funkční verze, pak kontrola. Nic nejde do provozu bez „Proveďte".
 

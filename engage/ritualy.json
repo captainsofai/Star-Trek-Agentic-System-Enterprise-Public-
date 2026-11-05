@@ -1,11 +1,16 @@
 [
   {"id": "ranni-brief", "nazev": "Ranní brief", "kdy": "45 7 * * *", "stanice": "number-one", "prikaz": "rano", "zapnuto": true},
   {"id": "porada", "nazev": "Porada", "kdy": "30 7 * * 1", "stanice": "picard", "prikaz": "porada", "zapnuto": true},
-  {"id": "sync", "nazev": "Sync týmu", "kdy": "15 8 * * 1", "stanice": "number-one", "prikaz": "sync", "zapnuto": false},
+  {"id": "sync", "nazev": "Sync týmu", "kdy": "15 8 * * 1", "stanice": "picard", "prikaz": "sync", "zapnuto": false},
   {"id": "obsah", "nazev": "Obsah na příští týden", "kdy": "0 10 * * 5", "stanice": "uhura", "prikaz": "tyden", "zapnuto": false},
+  {"id": "pokladna", "nazev": "Pokladna", "kdy": "0 12 * * 5", "stanice": "number-one", "prikaz": "pokladna", "zapnuto": false},
   {"id": "kurz-obchodu", "nazev": "Kurz obchodu", "kdy": "0 13 * * 5", "stanice": "sulu", "prikaz": "kurz", "zapnuto": true},
   {"id": "plan-tydne", "nazev": "Plán týdne", "kdy": "0 18 * * 0", "stanice": "number-one", "prikaz": "plan", "zapnuto": false},
   {"id": "smycka", "nazev": "Smyčka", "kdy": "30 19 * * 0", "stanice": "spock", "prikaz": "smycka", "zapnuto": false},
+  {"id": "ucetni", "nazev": "Účetní podklady", "kdy": "0 9 1 * *", "stanice": "number-one", "prikaz": "ucetni", "zapnuto": false},
   {"id": "uzaverka", "nazev": "Měsíční uzávěrka", "kdy": "30 9 1 * *", "stanice": "picard", "prikaz": "uzaverka", "zapnuto": false},
-  {"id": "revize", "nazev": "Revize systému", "kdy": "0 10 2 * *", "stanice": "scotty", "prikaz": "revize", "zapnuto": false}
+  {"id": "revize", "nazev": "Revize systému", "kdy": "0 10 2 * *", "stanice": "scotty", "prikaz": "revize", "zapnuto": false},
+  {"id": "lide", "nazev": "Lidé", "kdy": "30 9 3 * *", "stanice": "kirk", "prikaz": "lide", "zapnuto": false},
+  {"id": "soud-q", "nazev": "Soud Q", "kdy": "0 10 15 * *", "stanice": "q", "prikaz": "audit", "zapnuto": false},
+  {"id": "kurz-q", "nazev": "Soud nad kurzem", "kdy": "0 10 1 1,4,7,10 *", "stanice": "q", "prikaz": "strategie", "zapnuto": false}
 ]

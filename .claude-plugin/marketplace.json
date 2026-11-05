@@ -7,8 +7,8 @@
     {
       "name": "star-trek-agentic-system-enterprise",
       "source": "./plugin",
-      "description": "USS Enterprise: agentní enterprise systém pro řízení firmy. Šest stanic, onboarding a autonomní běh (Engage).",
-      "version": "2.0.0"
+      "description": "USS Enterprise: agentní enterprise systém pro řízení firmy. Sedm stanic, Q jako red team, onboarding a autonomní běh (Engage).",
+      "version": "1.2.0"
     }
   ],
   "metadata": {
