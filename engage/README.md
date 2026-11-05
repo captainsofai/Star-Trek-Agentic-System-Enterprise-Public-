@@ -64,7 +64,7 @@ Profil firmy, `mcp.json` a úpravy rituálů nahrajete do bucketu (`gs://<bucket
 
 ## Bezpečnost
 
-1. **Bez „Proveďte" nic ven:** nástroje ven jsou v běžném běhu zakázané přímo v Claude Code (`--disallowedTools`), nejen v pokynech; povolí se jen v běhu po „Proveďte <ID>" a jen na ten návrh.
+1. **Bez „Proveďte" nic ven:** nástroje ven jsou v běžném běhu zakázané přímo v Claude Code (`--disallowedTools`), nejen v pokynech; povolí se jen v běhu po „Proveďte &lt;ID&gt;" a jen na ten návrh.
 2. **Tajemství jen v trezoru:** Klíčenka nebo Secret Manager. Agent dostane jen proměnné z `env_pro_agenta`, nikdy token bota ani tokeny Velínu. Bash a WebFetch agent nemá.
 3. **Jen kapitán:** Velín přijímá zprávy jen z `TELEGRAM_CHAT_ID`. Na Google Cloudu je webhook chráněný tajným tokenem Telegramu a rituály tokenem `RITUAL_TOKEN`; bucket je soukromý.
 4. **Brzda a strop:** `/stop` zastaví všechny běhy i rituály. Na každý běh je strop ceny a času, záznam každého běhu je v `logs/`.

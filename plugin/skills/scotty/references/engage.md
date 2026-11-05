@@ -5,9 +5,9 @@
 ## Co Engage dává
 
 1. **Běží sám:** rituály (ranní brief, sync, kurz obchodu, smyčka) se spouští podle plánu bez otevřeného chatu.
-2. **Velín v kapsě:** hlášení chodí kapitánovi do soukromého chatu (výchozí je Telegram bot). Z telefonu dává rozkazy (`/sulu kurz`, „připrav podklady na zítřek") a schvaluje „Proveďte <ID>".
+2. **Velín v kapsě:** hlášení chodí kapitánovi do soukromého chatu (výchozí je Telegram bot). Z telefonu dává rozkazy (`/sulu kurz`, „připrav podklady na zítřek") a schvaluje „Proveďte &lt;ID&gt;".
 3. **Pravé agenty:** každá stanice běží jako agent Claude se svými skilly, nástroji (MCP konektory) a lodními daty (profil firmy, agenda, Knihovna).
-4. **Bezpečně autonomní:** v běžném běhu nástroje ven v běhu vůbec nejsou. Akci ven stanice jen zapíše jako návrh do `navrhy/<ID>.md`. Teprve po „Proveďte <ID>" od kapitána běží jeden schválený běh s nástroji ven, jen na ten návrh.
+4. **Bezpečně autonomní:** v běžném běhu nástroje ven v běhu vůbec nejsou. Akci ven stanice jen zapíše jako návrh do `navrhy/<ID>.md`. Teprve po „Proveďte &lt;ID&gt;" od kapitána běží jeden schválený běh s nástroji ven, jen na ten návrh.
 5. **Pod kontrolou:** strop na cenu běhu, červený poplach (`/stop`) zastaví všechno, každý běh má hlášení v `hlaseni/` a záznam v `logs/`.
 
 ## Dvě cesty

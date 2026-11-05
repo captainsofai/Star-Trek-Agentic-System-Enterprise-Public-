@@ -135,7 +135,7 @@ Začněte nejvýš třemi rituály, vždy ranním briefem. Přesná zadání jso
 
 1. **Rituály běží samy** a hlášení chodí do soukromého chatu (Telegram bot).
 2. **Rozkazy z telefonu:** libovolný text jde Picardovi, `/sulu kurz` nebo `/kirk kapacita` přímo stanici, `/stav`, `/stop`.
-3. **Akce ven jen po „Proveďte <ID>":** v běžném běhu nemají stanice nástroje ven vůbec a akci jen zapíší jako návrh; po vašem schválení proběhne jeden běh s nástroji ven, jen na ten návrh.
+3. **Akce ven jen po „Proveďte &lt;ID&gt;":** v běžném běhu nemají stanice nástroje ven vůbec a akci jen zapíší jako návrh; po vašem schválení proběhne jeden běh s nástroji ven, jen na ten návrh.
 
 Kód a postup: složka [engage/](engage/README.md).
 
