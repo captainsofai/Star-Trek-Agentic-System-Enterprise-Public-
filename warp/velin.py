@@ -8,7 +8,7 @@ navrhují; běží až po „Proveďte <ID>" od kapitána.
 Použití:
   velin.py ritual <id>          jeden rituál hned
   velin.py rozkaz "<text>"      rozkaz Picardovi (nebo "/sulu kurz" a podobně)
-  velin.py rozkaz "/picard engage <ID>"  start mise z mise/<ID>.md
+  velin.py rozkaz "/picard go <ID>"  start mise z mise/<ID>.md
   velin.py proved <ID>          schválený návrh z navrhy/<ID>.md
   velin.py polling              Mac mini: Telegram long polling a plánovač rituálů
   velin.py server               Google Cloud: HTTP pro webhook Telegramu a Cloud Scheduler
@@ -273,10 +273,10 @@ def zprava_kapitana(text, chat_id):
         kapitanovi("🟢 Loď znovu běží.")
     elif nizke in ("/stav", "stav"):
         kapitanovi(*stav())
-    elif nizke in ("engage", "/engage") or nizke.startswith(("engage ", "/engage ")):
+    elif nizke in ("go", "/go") or nizke.startswith(("go ", "/go ")):
         mise = t.split(maxsplit=1)[1].strip() if " " in t else ""
-        kapitanovi("🖖 Engage. Posádka startuje misi" + (f" {mise}." if mise else "."))
-        FRONTA.put(("rozkaz", f"/picard engage {mise}".strip()))
+        kapitanovi("🖖 Go. Posádka startuje misi" + (f" {mise}." if mise else "."))
+        FRONTA.put(("rozkaz", f"/picard go {mise}".strip()))
     elif nizke.startswith(("proveďte ", "provedte ")):
         nid = t.split(maxsplit=1)[1].strip()
         kapitanovi(f"🖖 Rozkaz přijat: provádím návrh {nid}.")

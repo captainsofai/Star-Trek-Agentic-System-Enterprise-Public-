@@ -2,7 +2,7 @@
 
 **USS Enterprise: agentní enterprise systém pro řízení firmy.**
 
-> Firma je loď USS Enterprise a vy jste její kapitán. Určíte cíl a řeknete „Engage", posádka pracuje, Q kontroluje a loď se z každé chyby učí. Ven nejde nic, dokud neřeknete „Proveďte".
+> Firma je loď USS Enterprise a vy jste její kapitán. Určíte cíl a řeknete „Go", posádka pracuje, Q kontroluje a loď se z každé chyby učí. Ven nejde nic, dokud neřeknete „Proveďte".
 
 Sedm stanic a Q v Claude pokrývají všech 28 rolí firmy. Po instalaci se loď sama naladí na vaši firmu, s **Warpem** běží i sama, na Mac mini nebo na Google Cloudu.
 
@@ -24,7 +24,7 @@ Celý systém v jednom dokumentu: [STAR-TREK-AGENTIC-SYSTEM-ENTERPRISE.md](STAR-
 1. **Instalace:** v Claude Code `/plugin marketplace add captainsofai/Star-Trek-Agentic-System-Enterprise-Public-` a `/plugin install star-trek-agentic-system-enterprise`; v aplikaci Claude zabalte složku `plugin/` do zipu s příponou `.plugin` a nahrajte ho.
 2. **Konektory:** e-mail, kalendář a soubory; Notion nebo CRM a fakturaci podle potřeby.
 3. **Onboarding:** napište třeba „Ahoj, Enterprise". Loď se za 10 minut zeptá na vás, firmu, tým, nástroje a co vás pálí, a naladí stanice a rituály.
-4. **První mise:** řekněte cíl, Picard ukáže plán, vy řeknete „Engage". Co má jít ven, schválíte „Proveďte".
+4. **První mise:** řekněte cíl, Picard ukáže plán, vy řeknete „Go". Co má jít ven, schválíte „Proveďte".
 5. **Warp:** `/scotty warp` a loď poběží sama, hlášení a rozkazy budou v telefonu. Viz [warp/](warp/README.md).
 
 ## Struktura repa

@@ -13,7 +13,7 @@ Warp spustí stanice lodi jako agenty Claude (Claude Code v režimu bez obsluhy)
    |---|---|
    | libovolný text | rozkaz Picardovi, ten ho rozdělí stanicím |
    | `/sulu kurz`, `/picard projekty`, `/number-one rano`, … | rozkaz konkrétní stanici |
-   | `Engage [ID]` | start mise, kterou Picard naplánoval (`mise/<ID>.md`) |
+   | `Go [ID]` | start mise, kterou Picard naplánoval (`mise/<ID>.md`) |
    | `Proveďte <ID>` | jeden schválený běh s nástroji ven, jen na návrh `<ID>` |
    | `/stav` | poslední hlášení a čekající návrhy |
    | `/stop` (červený poplach) a `/start` | zastavení a obnovení lodi |

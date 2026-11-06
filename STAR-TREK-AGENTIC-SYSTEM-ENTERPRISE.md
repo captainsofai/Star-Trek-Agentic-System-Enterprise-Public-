@@ -1,6 +1,6 @@
 ---
 typ: systém
-verze: v1.3
+verze: v1.4
 datum: 2026-11-05
 ---
 
@@ -8,14 +8,14 @@ datum: 2026-11-05
 
 **USS Enterprise: agentní enterprise systém pro řízení firmy.**
 
-> **Axiom:** Firma je loď USS Enterprise a vy jste její kapitán. Určíte cíl a řeknete „Engage", posádka pracuje, Q kontroluje a loď se z každé chyby učí. Ven nejde nic, dokud neřeknete „Proveďte".
+> **Axiom:** Firma je loď USS Enterprise a vy jste její kapitán. Určíte cíl a řeknete „Go", posádka pracuje, Q kontroluje a loď se z každé chyby učí. Ven nejde nic, dokud neřeknete „Proveďte".
 
 Systém AI agentů pro podnikatele a CEO jakékoli firmy: sedm stanic a Q pokrývají všech 28 rolí firmy. Běží v Claude jako plugin, po instalaci se sám naladí na vaši firmu a s **Warpem** běží i sám, na Mac mini nebo na Google Cloudu. Oslovuje vás „Kapitáne" a vaším jménem.
 
 ## 1. Jak loď funguje
 
 1. **Mise:** řeknete cíl, Picard ho rozdělí stanicím a ukáže plán mise.
-2. **Engage:** na vaše „Engage" se posádka pustí do práce a připraví výstupy.
+2. **Go:** na vaše „Go" se posádka pustí do práce a připraví výstupy.
 3. **Proveďte:** co má jít ven (e-mail, příspěvek, faktura, nasazení), čeká na vaše „Proveďte &lt;ID&gt;".
 4. **Q a smyčka učení:** Q kontroluje výstupy, z nálezů dělá lekce a z lekcí každý měsíc update verze lodi.
 5. **Warp:** loď běží sama podle rituálů, hlášení a rozkazy máte v telefonu.
@@ -30,7 +30,7 @@ Systém AI agentů pro podnikatele a CEO jakékoli firmy: sedm stanic a Q pokrý
 
 **Slovník:**
 
-- **„Engage"** je start mise;
+- **„Go"** je start mise;
 - **„Proveďte &lt;ID&gt;"** je schválení jedné akce ven;
 - **„Warp"** je autonomní běh lodi;
 - **Rozkaz** je zadání o pěti částech (cíl, výstup a kam, zdroje, hranice, úsilí), **hlášení** výsledek ve 3 nebo 5 bodech;
@@ -120,7 +120,7 @@ Začněte nejvýš třemi rituály, vždy ranním briefem. Zadání jsou v [ritu
 | Model | klíč Claude API | klíč Claude API, nebo Claude ve Vertex AI |
 
 1. **Rituály běží samy** a hlášení chodí do soukromého chatu (Telegram bot).
-2. **Z telefonu:** volný text jde Picardovi, `/sulu kurz` přímo stanici, `Engage` startuje misi, `/stav` a `/stop`.
+2. **Z telefonu:** volný text jde Picardovi, `/sulu kurz` přímo stanici, `Go` startuje misi, `/stav` a `/stop`.
 3. **Ven jen po „Proveďte &lt;ID&gt;":** v běžném běhu stanice nemají nástroje ven; akci zapíší jako návrh a po schválení proběhne jeden běh jen na ten návrh.
 
 Kód a postup: [warp/](warp/README.md).

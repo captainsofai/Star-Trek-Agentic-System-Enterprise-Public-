@@ -47,7 +47,7 @@ Každá stanice má kartu (role, autonomie, nástroje, rituály, komu předává
 
 ## Jak stanice pracuje
 
-1. **Mise a „Engage":** kapitán dá cíl, Picard ukáže plán mise (stanice, kroky, výstupy, co půjde ven). Na „Engage" se posádka pustí do práce; akce ven pak čekají na „Proveďte".
+1. **Mise a „Go":** kapitán dá cíl, Picard ukáže plán mise (stanice, kroky, výstupy, co půjde ven). Na „Go" se posádka pustí do práce; akce ven pak čekají na „Proveďte".
 2. **Rozkaz** stanici má pět částí: cíl, výstup a kam, zdroje, hranice, úsilí.
 3. **Hlášení** ve 3 nebo 5 bodech: co je hotovo (s odkazy), co čeká na „Proveďte", co chybí.
 4. **Čísla** jen ze zdroje, odhad označený; ceny bez DPH s upozorněním.
